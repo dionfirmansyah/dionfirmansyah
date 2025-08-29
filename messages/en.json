@@ -1,0 +1,120 @@
+{
+    "navigation": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Hello, I'm",
+        "subtitle": "Full Stack Developer",
+        "description": "I create digital experiences that make a real difference",
+        "cta": "About Me",
+        "downloadResume": "Download CV",
+        "tagline": "Where design meets innovation in code."
+    },
+    "about": {
+        "title": "About Me",
+        "tagline": "A fresh IT graduate with a curious mind for code and design.",
+        "description": "I am a Full Stack Developer passionate about building modern web applications that balance functionality and aesthetics. My go-to tools include PHP Laravel for the backend, and React, Next.js, and TypeScript for creating interactive, responsive frontend experiences.",
+        "sub-description": " To me, a website is more than just a tool — it’s a space that connects ideas and people. Every line of code plays a role in telling a story that’s efficient, scalable, and user-friendly. I believe that when logic and design work hand in hand, they can create digital products that not only perform flawlessly but also leave a lasting impression."
+    },
+    "projects": {
+        "slideButton": "Slide To View All",
+        "allwork": "All Work",
+        "allwork-desc": "As an artisan, I like to start from raw matter and give life to an iconic product that makes your brand stand out starting from a Visual Strategy that guide the client's vision to reality",
+        "title": "My Projects",
+        "subtitle": "FEATURED WORK",
+        "description": "Explore a selection of my key projects, showcasing skills in web development, design, and creative problem-solving.",
+        "viewProject": "Go to Project",
+        "sourceCode": "View Code",
+        "liveDemo": "Live Demo",
+        "tech": "Technologies",
+        "cta-1": "Interested in working together?",
+        "cta-2": "Let's create something amazing",
+        "cta-3": "Start a Project",
+        "cta-4": "Learn More About Me",
+        "location": "LOCATION",
+        "availableFor": "AVAILABLE FOR",
+        "newProjects": "New Projects"
+    },
+    "contact": {
+        "subtitle": "LET'S CONNECT",
+        "title": "Contact Me",
+        "description": "Let's discuss your project and bring your brilliant ideas to life.",
+        "contactInfo": "CONTACT INFORMATION",
+        "methods": {
+            "email": "EMAIL",
+            "github": "GITHUB",
+            "linkedin": "LINKEDIN"
+        },
+        "responseTime": {
+            "label": "RESPONSE TIME",
+            "value": "Within 24 hours"
+        },
+        "timezone": {
+            "label": "TIMEZONE",
+            "value": "GMT+8 (Banjarmasin)"
+        },
+        "form": {
+            "title": "START A PROJECT",
+            "name": "Full Name *",
+            "email": "Email Address *",
+            "company": "Company / Organization",
+            "message": "Project Details *",
+            "placeholders": {
+                "name": "Your full name",
+                "email": "your.email@company.com",
+                "company": "Your company name (optional)",
+                "message": "Tell me about your project, timeline, and budget..."
+            },
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "disclaimer": "By submitting this form, you agree to be contacted regarding your project inquiry. I respect your privacy and will never share your information.",
+            "onSuccess": "Thank you! Your message has been sent successfully.",
+            "onError": "Oops, something went wrong.",
+            "tryAgain": "Please try again later.",
+            "waitTime": "You can submit again in",
+            "seconds": " Seconds"
+        }
+    },
+    "footer": {
+        "brand": {
+            "tagline": "Crafting digital experiences with passion and precision. Turning ideas into beautiful, functional realities."
+        },
+        "status": {
+            "available": "Available for work",
+            "location": "Banjarmasin, ID"
+        },
+        "skills": {
+            "frontend": "Frontend",
+            "design": "Design",
+            "coffee": "Coffee"
+        },
+        "links": {
+            "title": "Quick Links",
+            "about": "About",
+            "projects": "Projects",
+            "contact": "Contact",
+            "blog": "Blog"
+        },
+        "newsletter": {
+            "title": "Stay Updated",
+            "description": "Get notified about new projects and updates.",
+            "placeholder": "your@email.com",
+            "thanks": "Thanks for subscribing! 🎉",
+            "subscribe": "Subscribe"
+        },
+        "social": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "Email"
+        },
+        "copyright": {
+            "text": "© 2024 Made with",
+            "love": "love",
+            "by": "by Dion Firmansyah"
+        },
+        "backToTop": "Back to Top"
+    }
+}

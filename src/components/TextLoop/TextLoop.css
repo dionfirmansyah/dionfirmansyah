@@ -1,0 +1,30 @@
+.curved-loop-jacket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* cegah gap bawaan inline SVG */
+    overflow: hidden; /* cegah path keluar */
+}
+
+.curved-loop-svg {
+    user-select: none;
+    display: block;
+    vertical-align: middle;
+    width: 100%;
+    height: auto; /* biar proporsional, ga perlu aspect-ratio */
+    font-size: 6rem;
+    fill: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.curved-loop-svg text {
+    dominant-baseline: middle;
+    text-anchor: middle;
+}

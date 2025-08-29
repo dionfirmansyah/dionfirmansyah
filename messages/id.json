@@ -1,0 +1,120 @@
+{
+    "navigation": {
+        "home": "Beranda",
+        "about": "Tentang Saya",
+        "projects": "Projek",
+        "contact": "Kontak"
+    },
+    "hero": {
+        "title": "Halo, Saya",
+        "subtitle": "Full Stack Developer",
+        "description": "Ngoding hal-hal keren yang bikin dunia digital lebih asik",
+        "cta": "Tentang Saya",
+        "downloadResume": "Unduh CV",
+        "tagline": "Kreatif, adaptif, interaktif"
+    },
+    "about": {
+        "title": "Tentang Saya",
+        "tagline": "Fresh graduate Teknik Informatika dengan rasa ingin tahu yang besar pada kode dan desain.",
+        "description": "Saya adalah seorang Full Stack Developer yang antusias mengembangkan aplikasi web modern dengan pendekatan yang seimbang antara fungsionalitas dan estetika. Saya biasa bekerja dengan PHP Laravel untuk sisi backend, serta React, Next.js, dan TypeScript untuk menciptakan pengalaman frontend yang interaktif dan responsif.",
+        "sub-description": "Bagi saya, sebuah website bukan hanya sekadar alat, tapi ruang yang bisa menghubungkan ide dan pengguna. Setiap baris kode adalah bagian dari cerita yang ingin saya sampaikan — efisien, skalabel, dan mudah digunakan. Saya percaya bahwa perpaduan logika dan desain yang tepat dapat menghasilkan produk digital yang tidak hanya bekerja dengan baik, tapi juga meninggalkan kesan mendalam."
+    },
+    "projects": {
+        "slideButton": "Geser Untuk Lihat Semua",
+        "allwork": "Semua Proyek",
+        "allwork-desc": "Sebagai Web Developer, saya memulai dari konsep dasar hingga menghasilkan solusi digital yang ikonik. Setiap proyek dibangun dengan strategi desain dan pengalaman pengguna yang jelas, untuk mewujudkan visi klien menjadi kenyataan.",
+        "title": "Projek Saya",
+        "subtitle": "Projek Unggulan",
+        "description": "Jelajahi beberapa proyek utama saya, menampilkan keterampilan dalam pengembangan web, desain, dan pemecahan masalah kreatif.",
+        "viewProject": "Lihat Detail",
+        "sourceCode": "Lihat Kode",
+        "liveDemo": "Demo Langsung",
+        "tech": "Teknologi",
+        "cta-1": "Tertarik untuk bekerja sama?",
+        "cta-2": "Mari ciptakan sesuatu yang luar biasa",
+        "cta-3": "Mulai Proyek",
+        "cta-4": "Pelajari Lebih Lanjut Tentang Saya",
+        "location": "LOKASI",
+        "availableFor": "Bersedia untuk",
+        "newProjects": "Projek Baru"
+    },
+    "contact": {
+        "subtitle": "MARI TERHUBUNG",
+        "title": "Hubungi Saya",
+        "description": "Mari berdiskusi tentang proyek Anda dan wujudkan ide-ide brilian menjadi kenyataan digital.",
+        "contactInfo": "INFORMASI KONTAK",
+        "methods": {
+            "email": "EMAIL",
+            "github": "GITHUB",
+            "linkedin": "LINKEDIN"
+        },
+        "responseTime": {
+            "label": "WAKTU RESPON",
+            "value": "Dalam 24 jam"
+        },
+        "timezone": {
+            "label": "ZONA WAKTU",
+            "value": "GMT+8 (Banjarmasin)"
+        },
+        "form": {
+            "title": "MULAI PROYEK",
+            "name": "Nama Lengkap *",
+            "email": "Alamat Email *",
+            "company": "Perusahaan / Organisasi",
+            "message": "Detail Proyek *",
+            "placeholders": {
+                "name": "Nama lengkap Anda",
+                "email": "email.anda@perusahaan.com",
+                "company": "Nama perusahaan Anda (opsional)",
+                "message": "Ceritakan tentang proyek Anda, timeline, dan anggaran..."
+            },
+            "submit": "Kirim Pesan",
+            "sending": "Mengirim...",
+            "disclaimer": "Dengan mengirim formulir ini, Anda setuju untuk dihubungi terkait pertanyaan proyek Anda. Privasi Anda saya hormati dan informasi Anda tidak akan pernah saya bagikan.",
+            "onSuccess": "Terima kasih! Pesan Anda berhasil dikirim.",
+            "onError": "Ups, terjadi kesalahan.",
+            "tryAgain": "Silakan coba lagi nanti.",
+            "waitTime": "Anda dapat mengirim lagi dalam",
+            "seconds": " Detik"
+        }
+    },
+    "footer": {
+        "brand": {
+            "tagline": "Menciptakan pengalaman digital dengan passion dan presisi. Mengubah ide menjadi realitas yang indah dan fungsional."
+        },
+        "status": {
+            "available": "Tersedia untuk proyek",
+            "location": "Banjarmasin, ID"
+        },
+        "skills": {
+            "frontend": "Frontend",
+            "design": "Desain",
+            "coffee": "Kopi"
+        },
+        "links": {
+            "title": "Navigasi Cepat",
+            "about": "Tentang",
+            "projects": "Projek",
+            "contact": "Kontak",
+            "blog": "Blog"
+        },
+        "newsletter": {
+            "title": "Tetap Terhubung",
+            "description": "Dapatkan notifikasi tentang proyek dan update terbaru.",
+            "placeholder": "email@anda.com",
+            "thanks": "Terima kasih sudah berlangganan! 🎉",
+            "subscribe": "Berlangganan"
+        },
+        "social": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "Email"
+        },
+        "copyright": {
+            "text": "© 2024 Dibuat dengan",
+            "love": "cinta",
+            "by": "oleh Dion Firmansyah"
+        },
+        "backToTop": "Kembali ke Atas"
+    }
+}

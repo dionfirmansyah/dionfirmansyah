@@ -1,0 +1,10 @@
+
+User-agent: *
+
+Allow: /en
+Allow: /en/work
+Allow: /id
+Allow: /id/work
+
+# Link to sitemap
+Sitemap: https://dionfirmansyah.vercel.app/sitemap.xml
