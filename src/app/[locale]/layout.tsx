@@ -6,7 +6,7 @@ import { getLocale, getMessages } from 'next-intl/server';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://dionfirmansyah.vercel.app'),
-    title: 'Dion ─── Fullstack Developer & UI Engineer | Portfolio',
+    title: 'Dion ─── Portfolio',
     description:
         'Portfolio resmi Dion Firmansyah: Fullstack Developer & UI Engineer yang berfokus pada React, Next.js, Laravel, dan desain antarmuka modern. Temukan proyek, pengalaman, serta karya terbaru.',
     keywords: [
