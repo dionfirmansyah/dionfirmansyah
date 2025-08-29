@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useResponsive } from '@/hooks/useResponsive';
 import { Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import BackToTopButton from '../common/BackToTopButton';
 
@@ -21,8 +22,8 @@ export default function Header() {
     const navItems = useMemo(
         () => [
             { key: 'home', href: '#home' },
-            { key: 'projects', href: '#projects' },
             { key: 'about', href: '#about' },
+            { key: 'projects', href: '#projects' },
             { key: 'contact', href: '#contact' },
         ],
         [],
@@ -72,13 +73,6 @@ export default function Header() {
         return () => observer.disconnect();
     }, [activeSection, navItems]);
 
-    // const scrollToHero = () => {
-    //     const heroSection = document.querySelector('#home');
-    //     if (heroSection) {
-    //         heroSection.scrollIntoView();
-    //     }
-    // };
-
     const handleNavClick = (href: string) => {
         setIsOpen(false);
         const element = document.querySelector(href);
@@ -104,7 +98,7 @@ export default function Header() {
                         <h1 className="font-[QurovaMedium] font-bold md:text-2xl">dionfirmansyah.</h1>
 
                         {/* Desktop Navigation */}
-                        {/* {!isMobile && (
+                        {!isMobile && (
                             <nav className="hidden items-center justify-center space-x-8 md:flex">
                                 {navItems.map((item, index) => (
                                     <div key={item.key} className="group relative">
@@ -120,12 +114,12 @@ export default function Header() {
                                     </div>
                                 ))}
                             </nav>
-                        )} */}
+                        )}
 
                         {/* Actions */}
                         <div className="flex items-center space-x-2">
                             <LangguageSwitcher />
-                            {isMobile && (
+                            {isMobile ? (
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -144,6 +138,10 @@ export default function Header() {
                                             }`}
                                         />
                                     </div>
+                                </Button>
+                            ) : (
+                                <Button variant={'limeOutline'} asChild>
+                                    <Link href={'/#contact'}>{t('cta')}</Link>
                                 </Button>
                             )}
                         </div>

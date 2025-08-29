@@ -3,14 +3,15 @@
         "home": "Beranda",
         "about": "Tentang Saya",
         "projects": "Projek",
-        "contact": "Kontak"
+        "contact": "Kontak",
+        "cta": "Mari Terhubung"
     },
     "hero": {
         "title": "Halo, Saya",
         "subtitle": "Full Stack Developer",
         "description": "Ngoding hal-hal keren yang bikin dunia digital lebih asik",
         "cta": "Tentang Saya",
-        "downloadResume": "Unduh CV",
+        "viewCV": "Lihat CV",
         "tagline": "Kreatif, adaptif, interaktif"
     },
     "about": {

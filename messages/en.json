@@ -3,14 +3,15 @@
         "home": "Home",
         "about": "About",
         "projects": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "cta": "Get in Touch"
     },
     "hero": {
         "title": "Hello, I'm",
         "subtitle": "Full Stack Developer",
         "description": "I create digital experiences that make a real difference",
         "cta": "About Me",
-        "downloadResume": "Download CV",
+        "viewCV": "View CV",
         "tagline": "Where design meets innovation in code."
     },
     "about": {
