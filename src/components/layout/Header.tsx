@@ -3,7 +3,7 @@
 import LangguageSwitcher from '@/components/common/LangguageSwitcher';
 import { Button } from '@/components/ui/button';
 import { useResponsive } from '@/hooks/useResponsive';
-import { Menu, X } from 'lucide-react';
+import { Edit, Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
@@ -140,9 +140,12 @@ export default function Header() {
                                     </div>
                                 </Button>
                             ) : (
-                                <Button variant={'limeOutline'} asChild>
-                                    <Link href={'/#contact'}>{t('cta')}</Link>
-                                </Button>
+                                <Link href={'/#contact'}>
+                                    <Button variant={'limeOutline'}>
+                                        {t('cta')}
+                                        <Edit />
+                                    </Button>
+                                </Link>
                             )}
                         </div>
                     </div>

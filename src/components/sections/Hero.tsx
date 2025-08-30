@@ -70,7 +70,7 @@ export default function Hero() {
                         className="group text-foreground w-full px-8 py-4 text-lg font-bold tracking-wide uppercase md:w-auto"
                         onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
                     >
-                        {t('cta')}
+                        <p className="capitalize">{t('cta')}</p>
                         <ArrowDown className="animate-bounce-fast h-5 w-5 transform transition-transform duration-300 group-hover:translate-y-1" />
                     </Button>
 

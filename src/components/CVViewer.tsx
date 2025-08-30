@@ -1,6 +1,6 @@
 'use client';
 
-import { Download, ExternalLink, X } from 'lucide-react';
+import { Download, ExternalLink, ScrollText, X } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { useState } from 'react';
 import { Button } from './ui/button';
@@ -49,8 +49,8 @@ export default function CVViewer({ title = 'VIEW CV', showDownload = true }: CVV
                 className="group text-foreground w-full rounded-full border-black px-8 py-4 text-lg font-bold tracking-wide uppercase hover:bg-lime-300 hover:text-black md:w-auto md:border-2"
                 onClick={handleView}
             >
-                {title}
-                <Download />
+                <ScrollText />
+                <p className="capitalize">{title}</p>
             </Button>
 
             {/* Neo Swiss Modal */}
