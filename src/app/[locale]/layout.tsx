@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     creator: 'Dion Firmansyah',
     publisher: 'Dion Firmansyah',
     openGraph: {
-        title: 'Dion ─── Fullstack Developer & UI Engineer',
+        title: 'Dion ─── Portfolio',
         description: 'Jelajahi portfolio Dion: membangun aplikasi modern dengan Next.js, React, dan Laravel.',
         url: 'https://dionfirmansyah.vercel.app',
         siteName: 'Dion Portfolio',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Dion ─── Fullstack Developer & UI Engineer',
+        title: 'Dion ─── Portfolio',
         description: 'Portfolio resmi Dion, berisi proyek dan pengalaman sebagai developer.',
         images: ['/og-image.png'],
     },
