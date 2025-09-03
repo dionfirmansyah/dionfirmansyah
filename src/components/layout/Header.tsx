@@ -100,7 +100,7 @@ export default function Header() {
                         {/* Desktop Navigation */}
                         {!isMobile && (
                             <nav className="hidden items-center justify-center space-x-8 md:flex">
-                                {navItems.map((item, index) => (
+                                {navItems.map((item) => (
                                     <div key={item.key} className="group relative">
                                         <button
                                             onClick={() => handleNavClick(item.href)}
