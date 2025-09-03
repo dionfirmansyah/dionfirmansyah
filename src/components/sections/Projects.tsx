@@ -79,7 +79,7 @@ export default function Projects() {
                                     onClick={() => toggleProject(data.id)}
                                     className="group relative w-full overflow-hidden py-8 transition-all duration-300"
                                 >
-                                    <div className="relative z-10 grid grid-cols-12 items-center gap-4 text-left">
+                                    <div className="relative grid grid-cols-12 items-center gap-4 text-left">
                                         {/* Number */}
                                         <div className="col-span-2 md:col-span-1">
                                             <p className="text-lg font-bold text-gray-400 transition-all duration-300 group-hover:text-black">

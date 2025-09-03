@@ -85,7 +85,7 @@ export default function Header() {
     return (
         <>
             <header
-                className={`fixed top-0 z-50 w-full p-0 transition-all duration-500 ease-in-out ${headerVisible ? 'translate-y-0' : '-translate-y-full'} ${
+                className={`fixed top-0 z-10 w-full p-0 transition-all duration-500 ease-in-out ${headerVisible ? 'translate-y-0' : '-translate-y-full'} ${
                     scrolled
                         ? 'bg-background/95 border-b border-black shadow-lg backdrop-blur-xl md:border-2'
                         : 'bg-background/80 border-b border-black backdrop-blur-md md:border-2'

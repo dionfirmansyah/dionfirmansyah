@@ -69,7 +69,7 @@ export default function About() {
     ];
 
     return (
-        <section id="about" className="bt-10 pb-20">
+        <section id="about" className="bt-10 pb-6">
             <div className="container mx-auto max-w-5xl px-4">
                 {/* Header */}
                 <div className="mb-12 w-full">
@@ -149,7 +149,7 @@ export default function About() {
                                 logos={techLogos}
                                 speed={80}
                                 direction="left"
-                                logoHeight={48}
+                                logoHeight={isMobile ? 32 : 48}
                                 gap={40}
                                 pauseOnHover
                                 scaleOnHover

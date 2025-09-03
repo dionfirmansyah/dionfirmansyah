@@ -68,7 +68,7 @@ export default function CVViewer({ title = 'VIEW CV', showDownload = true }: CVV
 
             {/* Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm">
+                <div className="fixed inset-0 z-20 bg-black/90 backdrop-blur-sm">
                     <div className="flex h-full items-center justify-center p-4">
                         <div className="relative h-full w-full max-w-7xl overflow-hidden border-2 border-white bg-white">
                             {/* Header */}
@@ -85,6 +85,7 @@ export default function CVViewer({ title = 'VIEW CV', showDownload = true }: CVV
                                         title="CLOSE"
                                         variant={'outline'}
                                         size={'icon'}
+                                        className="rounded-full border-2 border-black bg-white text-black"
                                     >
                                         <X className="h-4 w-4" />
                                     </Button>

@@ -25,7 +25,7 @@ export default function Hero() {
                     WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0, 0, 0, 0))',
                 }}
             />
-            <div className="container mx-auto max-w-5xl px-6 md:px-12">
+            <div className="z-10 container mx-auto max-w-5xl px-6 md:px-12">
                 <div className="flex w-full items-center">
                     <p className="text-sm font-medium tracking-wider text-gray-500">{t('tagline')}</p>
                     <div className="ml-2 h-px flex-1 bg-black"></div>◉

@@ -112,11 +112,11 @@ export default function SlideToNavigate({ targetPath, label, pointerWidth = 120 
             <div className="flex w-full items-center gap-3">
                 <div className="relative flex-1 px-2">
                     <div className="relative h-8 w-full overflow-hidden">
-                        <div className="absolute top-1 right-0 z-10 bg-white">◉</div>
+                        <div className="absolute top-1 right-0 bg-white">◉</div>
                         <input
                             type="range"
                             min="0"
-                            max={isMobile ? '94' : '99'}
+                            max={isMobile ? '95' : '99'}
                             value={value}
                             onInput={handleInput}
                             onClick={handleClick}
@@ -133,7 +133,7 @@ export default function SlideToNavigate({ targetPath, label, pointerWidth = 120 
                         />
 
                         <div
-                            className="pointer-events-none absolute top-1/2 z-10"
+                            className="pointer-events-none absolute top-1/2"
                             style={{
                                 left: thumbPosition,
                                 transform: 'translateY(-50%)',
@@ -163,12 +163,12 @@ export default function SlideToNavigate({ targetPath, label, pointerWidth = 120 
 
             <style jsx global>{`
                 .slider-custom::-webkit-slider-runnable-track {
-                    height: 2px;
+                    height: 1px;
                     background: black;
                     border-radius: 1px;
                 }
                 .slider-custom::-moz-range-track {
-                    height: 2px;
+                    height: 1px;
                     background: black;
                     border-radius: 1px;
                     border: none;
