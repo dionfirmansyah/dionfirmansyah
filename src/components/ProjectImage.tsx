@@ -85,6 +85,7 @@ export function ProjectImage({ src, alt, className = '', width, height, projectT
                         setIsLoading(false);
                     }}
                     sizes={`(max-width: 768px) 100vw, (max-width: 1200px) 50vw, ${width}px`}
+                    quality={100}
                 />
             </div>
         );
