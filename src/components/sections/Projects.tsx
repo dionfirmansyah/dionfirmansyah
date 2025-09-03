@@ -233,33 +233,36 @@ export default function Projects() {
                                                         : 'translate-y-4 transform'
                                                 }`}
                                             >
-                                                <Button asChild variant="limeOutline">
-                                                    <Link
-                                                        href={data.liveUrl || '#'}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="group flex items-center"
+                                                {data.liveUrl && (
+                                                    <Button asChild variant="limeOutline">
+                                                        <Link
+                                                            href={data.liveUrl || '#'}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="group flex items-center"
+                                                        >
+                                                            <ExternalLink className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-105" />
+                                                            {t('viewProject')}
+                                                        </Link>
+                                                    </Button>
+                                                )}
+                                                {data.githubUrl && (
+                                                    <Button
+                                                        variant="outline"
+                                                        className="rounded-full border-black px-6 font-medium transition-all duration-300 hover:scale-105 hover:transform hover:border-gray-400 hover:shadow-md md:border-2"
+                                                        asChild
                                                     >
-                                                        <ExternalLink className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-105" />
-                                                        {t('viewProject')}
-                                                    </Link>
-                                                </Button>
-
-                                                <Button
-                                                    variant="outline"
-                                                    className="rounded-full border-black px-6 font-medium transition-all duration-300 hover:scale-105 hover:transform hover:border-gray-400 hover:shadow-md md:border-2"
-                                                    asChild
-                                                >
-                                                    <Link
-                                                        href={data.githubUrl || '#'}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center"
-                                                    >
-                                                        <Github className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-                                                        {t('sourceCode')}
-                                                    </Link>
-                                                </Button>
+                                                        <Link
+                                                            href={data.githubUrl || '#'}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="flex items-center"
+                                                        >
+                                                            <Github className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                                                            {t('sourceCode')}
+                                                        </Link>
+                                                    </Button>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
