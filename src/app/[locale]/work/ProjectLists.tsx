@@ -121,18 +121,19 @@ function InitialLoadingScreen({ translations }: { translations: Translations }) 
                         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-center lg:gap-4">
                             <Button asChild variant="limeOutline">
                                 <Link href="/#contact" className="group flex items-center">
-                                    <Rocket className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-105" />
+                                    <Rocket className="mr-2 h-4 w-4 transition-transform duration-300" />
                                     {translations['cta-3']}
                                 </Link>
                             </Button>
+
                             <Button
                                 variant="outline"
-                                className="transform rounded-full border-black px-6 font-medium transition-all duration-300 hover:scale-105 hover:border-gray-400 hover:shadow-md md:border-2"
+                                className="group text-foreground w-full rounded-full border-black px-8 py-4 text-lg font-bold tracking-wide uppercase hover:bg-lime-300 hover:text-black md:w-auto md:border-2"
                                 asChild
                             >
                                 <Link href="/#about" className="flex items-center">
-                                    <Contact className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-                                    {translations['cta-4']}
+                                    <Contact className="mr-2 h-4 w-4 transition-transform duration-300" />
+                                    <p>{translations['cta-4']}</p>
                                 </Link>
                             </Button>
                         </div>
@@ -392,21 +393,23 @@ export function ProjectLists({ translations }: ProjectListsProps) {
                                                     </Button>
                                                 )}
                                                 {project.githubUrl && (
-                                                    <Button
-                                                        variant="outline"
-                                                        className="transform rounded-full border-black px-6 font-medium transition-all duration-300 hover:scale-105 hover:border-gray-400 hover:shadow-md md:border-2"
-                                                        asChild
-                                                    >
-                                                        <Link
-                                                            href={project.githubUrl}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="flex items-center"
+                                                    <>
+                                                        <Button
+                                                            variant="outline"
+                                                            className="group rounded-full border-black px-8 py-4 tracking-wide hover:bg-lime-300 hover:text-black md:w-auto md:border-2"
+                                                            asChild
                                                         >
-                                                            <Github className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-                                                            {translations.sourceCode}
-                                                        </Link>
-                                                    </Button>
+                                                            <Link
+                                                                href={project.githubUrl}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center"
+                                                            >
+                                                                <Github className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                                                                {translations.sourceCode}
+                                                            </Link>
+                                                        </Button>
+                                                    </>
                                                 )}
                                             </div>
                                         </div>
@@ -429,17 +432,18 @@ export function ProjectLists({ translations }: ProjectListsProps) {
                         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-center lg:gap-4">
                             <Button asChild variant="limeOutline">
                                 <Link href="/#contact" className="group flex items-center">
-                                    <Rocket className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-105" />
+                                    <Rocket className="mr-2 h-4 w-4 transition-transform duration-300" />
                                     {translations['cta-3']}
                                 </Link>
                             </Button>
+
                             <Button
                                 variant="outline"
-                                className="transform rounded-full border-black px-6 font-medium transition-all duration-300 hover:scale-105 hover:border-gray-400 hover:shadow-md md:border-2"
+                                className="group rounded-full border-black px-8 py-4 font-bold tracking-wide hover:bg-lime-300 hover:text-black md:w-auto md:border-2"
                                 asChild
                             >
                                 <Link href="/#about" className="flex items-center">
-                                    <Contact className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                                    <Contact className="mr-2 h-4 w-4 transition-transform duration-300" />
                                     {translations['cta-4']}
                                 </Link>
                             </Button>
