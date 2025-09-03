@@ -82,9 +82,9 @@ export default function Projects() {
                                     <div className="relative z-10 grid grid-cols-12 items-center gap-4 text-left">
                                         {/* Number */}
                                         <div className="col-span-2 md:col-span-1">
-                                            <span className="text-lg font-bold text-gray-400 transition-all duration-300 group-hover:text-black">
+                                            <p className="text-lg font-bold text-gray-400 transition-all duration-300 group-hover:text-black">
                                                 N°00{index + 1}
-                                            </span>
+                                            </p>
                                         </div>
 
                                         {/* Project Title */}
@@ -135,7 +135,7 @@ export default function Projects() {
                                     >
                                         <div className="max-w-3xl">
                                             {/* Images */}
-                                            <div>
+                                            <div className="mb-4">
                                                 {data.showcaseImages?.length
                                                     ? data.showcaseImages.map((img, index: number) => (
                                                           <div key={index}>

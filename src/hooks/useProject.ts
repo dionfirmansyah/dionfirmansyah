@@ -38,7 +38,7 @@ export function useProject() {
                   },
                   $: {
                       order: {
-                          order: 'desc',
+                          order: 'asc',
                       },
                   },
               },
