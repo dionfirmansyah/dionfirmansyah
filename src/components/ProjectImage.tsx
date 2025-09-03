@@ -1,5 +1,6 @@
 'use client';
 import { AlertCircle, ImageIcon } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface ProjectImageProps {
@@ -66,7 +67,7 @@ export function ProjectImage({ src, alt, className = '', width, height, projectT
                 onMouseLeave={() => setTransformOrigin('center center')}
             >
                 {isLoading && <LoadingPlaceholder />}
-                <img
+                <Image
                     src={src}
                     alt={alt}
                     className={`${className} ${
