@@ -110,13 +110,13 @@ export default function SlideToNavigate({ targetPath, label, pointerWidth = 120 
     return (
         <>
             <div className="flex w-full items-center gap-3">
-                <div className="relative flex-1">
-                    <div className="absolute top-1 right-0 z-10 bg-white">◉</div>
-                    <div className="relative h-8 overflow-hidden">
+                <div className="relative flex-1 px-2">
+                    <div className="relative h-8 w-full overflow-hidden">
+                        <div className="absolute top-1 right-0 z-10 bg-white">◉</div>
                         <input
                             type="range"
                             min="0"
-                            max={isMobile ? '93' : '98'}
+                            max={isMobile ? '94' : '99'}
                             value={value}
                             onInput={handleInput}
                             onClick={handleClick}
