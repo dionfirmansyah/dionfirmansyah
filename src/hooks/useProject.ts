@@ -14,7 +14,7 @@ export function useProject() {
               projects: {
                   $: {
                       order: {
-                          serverCreatedAt: 'desc',
+                          year: 'desc',
                       },
                   },
                   images: {
