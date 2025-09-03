@@ -3,9 +3,9 @@
 import RotatingText from '@/components/RotatingText';
 import { Button } from '@/components/ui/button';
 import { useResponsive } from '@/hooks/useResponsive';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, ScrollText } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import CVViewer from '../CVViewer';
+import Link from 'next/link';
 
 export default function Hero() {
     const t = useTranslations('hero');
@@ -64,7 +64,7 @@ export default function Hero() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-6 flex flex-col space-y-3 md:flex-row md:items-center md:gap-4 md:space-y-0">
+                <div className="relative z-5 mt-6 flex flex-col space-y-3 md:flex-row md:items-center md:gap-4 md:space-y-0">
                     <Button
                         variant="limeOutline"
                         className="group text-foreground w-full px-8 py-4 text-lg font-bold tracking-wide uppercase md:w-auto"
@@ -74,7 +74,16 @@ export default function Hero() {
                         <ArrowDown className="animate-bounce-fast h-5 w-5 transform transition-transform duration-300 group-hover:translate-y-1" />
                     </Button>
 
-                    <CVViewer title={t('viewCV')} />
+                    <Button
+                        variant="outline"
+                        className="group text-foreground w-full rounded-full border-black px-8 py-4 text-lg font-bold tracking-wide uppercase hover:bg-lime-300 hover:text-black md:w-auto md:border-2"
+                        asChild
+                    >
+                        <Link href="/my-cv?">
+                            <ScrollText />
+                            <p className="capitalize">{t('viewCV')}</p>
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </section>
