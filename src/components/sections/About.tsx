@@ -1,9 +1,25 @@
 'use client';
 
 import { useResponsive } from '@/hooks/useResponsive';
-import { Circle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import {
+    SiCss3,
+    SiFigma,
+    SiGit,
+    SiHtml5,
+    SiJavascript,
+    SiLaravel,
+    SiMysql,
+    SiNextdotjs,
+    SiPhp,
+    SiPwa,
+    SiPython,
+    SiReact,
+    SiTailwindcss,
+    SiTypescript,
+} from 'react-icons/si';
+import LogoLoop from '../LogoLoop';
 
 export default function About() {
     const t = useTranslations('about');
@@ -23,18 +39,33 @@ export default function About() {
             level: 3,
         },
     ];
-    const technologies = [
-        'HTML/CSS',
-        'Tailwind CSS',
-        'TypeScript',
-        'React',
-        'PWA',
-        'Next.js',
-        'Laravel',
-        'MySQL',
-        'PHP',
-        'PYTHON',
-        'Git',
+
+    const techLogos = [
+        // UI / UX
+        { node: <SiFigma />, title: 'Figma', href: 'https://www.figma.com' },
+
+        // Frontend
+        { node: <SiHtml5 />, title: 'HTML', href: 'https://html.com' },
+        { node: <SiCss3 />, title: 'CSS', href: 'https://css.com' },
+        {
+            node: <SiJavascript />,
+            title: 'JavaScript',
+            href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        }, // opsional kalau kamu pakai
+        { node: <SiTypescript />, title: 'TypeScript', href: 'https://www.typescriptlang.org' },
+        { node: <SiReact />, title: 'React', href: 'https://react.dev' },
+        { node: <SiNextdotjs />, title: 'Next.js', href: 'https://nextjs.org' },
+        { node: <SiTailwindcss />, title: 'Tailwind CSS', href: 'https://tailwindcss.com' },
+        { node: <SiPwa />, title: 'PWA', href: '#' },
+
+        // Backend
+        { node: <SiLaravel />, title: 'Laravel', href: 'https://laravel.com' },
+        { node: <SiPhp />, title: 'PHP', href: 'https://www.php.net' },
+        { node: <SiMysql />, title: 'MySQL', href: 'https://www.mysql.com' },
+        { node: <SiPython />, title: 'Python', href: 'https://www.python.org' },
+
+        // Tools
+        { node: <SiGit />, title: 'Git', href: 'https://git-scm.com' },
     ];
 
     return (
@@ -114,21 +145,19 @@ export default function About() {
                                 <div className="ml-2 h-px flex-1 bg-black"></div>◉
                             </div>
 
-                            <div className="flex flex-wrap gap-2">
-                                {technologies.map((skill, index) => (
-                                    <span
-                                        key={skill}
-                                        className="group flex items-center gap-2 rounded-md border border-black bg-lime-300 px-3 py-1 text-sm text-black transition-all duration-300 hover:bg-lime-100 md:border-2"
-                                        style={{
-                                            animationDelay: `${0.8 + index * 0.05}s`,
-                                            animationFillMode: 'forwards',
-                                        }}
-                                    >
-                                        <Circle className="h-2 w-2 fill-black text-black" />
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
+                            <LogoLoop
+                                logos={techLogos}
+                                speed={80}
+                                direction="left"
+                                logoHeight={48}
+                                gap={40}
+                                pauseOnHover
+                                scaleOnHover
+                                fadeOut
+                                fadeOutColor="#ffffff"
+                                ariaLabel="Technology partners"
+                                className="mt-6"
+                            />
                         </div>
                     </div>
                 </div>
