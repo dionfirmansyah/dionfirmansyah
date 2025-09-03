@@ -28,11 +28,13 @@ export function ProjectImage({ src, alt, className = '', width, height, projectT
 
     // Loading state component
     const LoadingPlaceholder = () => (
-        <div className="absolute inset-0 flex items-center justify-center bg-white">
-            <div className="relative">
-                <div className="h-16 w-16 rounded-full border-2 border-gray-200"></div>
-                <div className="absolute inset-0 h-16 w-16 animate-spin rounded-full border-2 border-black border-t-transparent"></div>
-                <p className="mt-2 text-center text-sm font-medium text-gray-500">Loading...</p>
+        <div className={`${className} flex animate-pulse items-center justify-center bg-gray-100 py-12`}>
+            <div className="absolute inset-0 flex items-center justify-center bg-white">
+                <div className="relative">
+                    <div className="h-16 w-16 rounded-full border-2 border-gray-200"></div>
+                    <div className="absolute inset-0 h-16 w-16 animate-spin rounded-full border-2 border-black border-t-transparent"></div>
+                    <p className="mt-2 text-center text-sm font-medium text-gray-500">Loading...</p>
+                </div>
             </div>
         </div>
     );
