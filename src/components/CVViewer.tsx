@@ -14,6 +14,7 @@ interface CVViewerProps {
 export default function CVViewer({ title = 'VIEW CV', showDownload = true }: CVViewerProps) {
     const locale = useLocale();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     // Path file PDF
     const cvFiles = {
@@ -107,15 +108,30 @@ export default function CVViewer({ title = 'VIEW CV', showDownload = true }: CVV
                                 </div>
                             </div>
 
-                            {/* Preview pakai Next.js Image */}
                             <div className="relative flex h-[calc(100%-88px)] w-full items-start justify-center overflow-y-auto bg-gray-50">
+                                {/* Skeleton shimmer */}
+                                {isLoading && (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-white">
+                                        <div className="relative">
+                                            <div className="h-16 w-16 rounded-full border-2 border-gray-200"></div>
+                                            <div className="absolute inset-0 h-16 w-16 animate-spin rounded-full border-2 border-black border-t-transparent"></div>
+                                            <p className="mt-2 text-center text-sm font-medium text-gray-500">
+                                                Loading...
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+
                                 <Image
                                     src={getCurrentImage()}
                                     alt="CV Preview"
                                     width={1200}
                                     height={1600}
-                                    className="h-auto w-full border border-black object-contain"
+                                    className={`h-auto w-full border border-black object-contain transition-opacity duration-700 ${
+                                        isLoading ? 'opacity-0' : 'opacity-100'
+                                    }`}
                                     priority
+                                    onLoadingComplete={() => setIsLoading(false)}
                                 />
                             </div>
 
