@@ -1,3 +1,4 @@
+'use client';
 import { AlertCircle, ImageIcon } from 'lucide-react';
 import { useState } from 'react';
 
@@ -11,17 +12,18 @@ interface ProjectImageProps {
     priority?: boolean;
 }
 
-export function ProjectImage({
-    src,
-    alt,
-    className = '',
-    width,
-    height,
-    projectTitle,
-    // priority = false,
-}: ProjectImageProps) {
+export function ProjectImage({ src, alt, className = '', width, height, projectTitle }: ProjectImageProps) {
     const [imageError, setImageError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [transformOrigin, setTransformOrigin] = useState('center center');
+
+    // Hitung posisi mouse untuk set `transform-origin`
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+        const x = ((e.clientX - left) / width) * 100;
+        const y = ((e.clientY - top) / height) * 100;
+        setTransformOrigin(`${x}% ${y}%`);
+    };
 
     // Loading state component
     const LoadingPlaceholder = () => (
@@ -38,7 +40,7 @@ export function ProjectImage({
         <div
             className={`${className} flex flex-col items-center justify-center overflow-hidden border-2 border-dashed border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100`}
         >
-            <div className="px-4 py-8 text-center transition-transform duration-300 hover:scale-110">
+            <div className="px-4 py-8 text-center">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-200">
                     <ImageIcon className="h-8 w-8 text-gray-400" />
                 </div>
@@ -56,15 +58,24 @@ export function ProjectImage({
         </div>
     );
 
-    // Success state with proper image
     if (!imageError && src) {
         return (
-            <div className="relative overflow-hidden rounded-lg">
+            <div
+                className="relative overflow-hidden rounded-lg"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={() => setTransformOrigin('center center')}
+            >
                 {isLoading && <LoadingPlaceholder />}
                 <img
                     src={src}
                     alt={alt}
-                    className={`${className} ${isLoading ? 'absolute inset-0 opacity-0' : 'relative opacity-100'} transition-all duration-300 hover:scale-110`}
+                    className={`${className} ${
+                        isLoading ? 'absolute inset-0 opacity-0' : 'relative opacity-100'
+                    } transition-transform duration-500 ease-out group-hover:scale-[2]`}
+                    style={{
+                        transformOrigin: transformOrigin,
+                        transform: 'scale(1)',
+                    }}
                     width={width}
                     height={height}
                     onLoad={() => setIsLoading(false)}
@@ -78,6 +89,5 @@ export function ProjectImage({
         );
     }
 
-    // Fallback for missing or error images
     return <ErrorFallback />;
 }
