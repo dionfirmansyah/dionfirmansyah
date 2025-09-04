@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         type: 'profile',
         images: [
             {
-                url: 'https://dionfirmansyah.vercel.app/cv/og-image.png',
+                url: 'https://dionfirmansyah.vercel.app/cv/og-image.png?v=2',
                 width: 1200,
                 height: 630,
                 alt: "Preview of Dion Firmansyah's CV",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Dion ─── CV',
         description: 'Explore the professional CV of Dion Firmansyah.',
-        images: ['https://dionfirmansyah.vercel.app/cv/og-image.png'],
+        images: ['https://dionfirmansyah.vercel.app/cv/og-image.png?v=2'],
     },
     metadataBase: new URL('https://dionfirmansyah.vercel.app'),
 };
