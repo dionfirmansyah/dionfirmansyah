@@ -49,11 +49,7 @@ const toCssLength = (value?: number | string): string | undefined => (typeof val
 const cx = (...parts: Array<string | false | null | undefined>) => parts.filter(Boolean).join(' ');
 
 // Resize Observer Hook
-const useResizeObserver = (
-    callback: () => void,
-    elements: Array<React.RefObject<Element | null>>,
-    deps: React.DependencyList,
-) => {
+const useResizeObserver = (callback: () => void, elements: Array<React.RefObject<Element | null>>) => {
     useEffect(() => {
         if (!window.ResizeObserver) {
             const handleResize = () => callback();
@@ -74,22 +70,16 @@ const useResizeObserver = (
         return () => {
             observers.forEach((observer) => observer?.disconnect());
         };
-    }, [callback, elements, ...deps]);
+    }, [callback, elements]);
 };
 
 // Image Loader Hook
-const useImageLoader = (
-    seqRef: React.RefObject<HTMLUListElement | null>,
-    onLoad: () => void,
-    deps: React.DependencyList,
-) => {
-    const memoizedOnLoad = useCallback(onLoad, deps);
-
+const useImageLoader = (seqRef: React.RefObject<HTMLUListElement | null>, onLoad: () => void) => {
     useEffect(() => {
         const images = seqRef.current?.querySelectorAll('img') ?? [];
 
         if (images.length === 0) {
-            memoizedOnLoad();
+            onLoad();
             return;
         }
 
@@ -97,7 +87,7 @@ const useImageLoader = (
         const handleImageLoad = () => {
             remainingImages -= 1;
             if (remainingImages === 0) {
-                memoizedOnLoad();
+                onLoad();
             }
         };
 
@@ -117,7 +107,7 @@ const useImageLoader = (
                 img.removeEventListener('error', handleImageLoad);
             });
         };
-    }, [memoizedOnLoad, seqRef]);
+    }, [onLoad, seqRef]);
 };
 
 // Animation Loop Hook
@@ -233,8 +223,8 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             }
         }, []);
 
-        useResizeObserver(updateDimensions, [containerRef, seqRef], [logos, gap, logoHeight]);
-        useImageLoader(seqRef, updateDimensions, [logos, gap, logoHeight]);
+        useResizeObserver(updateDimensions, [containerRef, seqRef]);
+        useImageLoader(seqRef, updateDimensions);
         useAnimationLoop(trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover);
 
         const cssVariables = useMemo(
