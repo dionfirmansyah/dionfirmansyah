@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         type: 'profile',
         images: [
             {
-                url: 'https://dionfirmansyah.vercel.app/cv/CV_DION-FIRMANSYAH_ID.jpg',
+                url: 'https://dionfirmansyah.vercel.app/cv/og-image.png',
                 width: 1200,
                 height: 630,
                 alt: "Preview of Dion Firmansyah's CV",
