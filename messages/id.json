@@ -28,6 +28,7 @@
         "subtitle": "Projek Unggulan",
         "description": "Jelajahi beberapa proyek utama saya, menampilkan keterampilan dalam pengembangan web, desain, dan pemecahan masalah kreatif.",
         "viewProject": "Kunjungi Situs",
+        "requestDemo": "Jadwalkan Demo",
         "sourceCode": "Lihat Kode",
         "liveDemo": "Demo Langsung",
         "tech": "Teknologi",
@@ -79,6 +80,47 @@
             "seconds": " Detik"
         }
     },
+
+    "requestDemo": {
+        "title": "Jadwalkan Demo",
+        "subtitle": "Jadwalkan demo untuk proyek ini",
+        "contactInfo": "INFORMASI KONTAK",
+        "methods": {
+            "email": "EMAIL",
+            "github": "GITHUB",
+            "linkedin": "LINKEDIN"
+        },
+        "responseTime": {
+            "label": "WAKTU RESPON",
+            "value": "Dalam 24 jam"
+        },
+        "timezone": {
+            "label": "ZONA WAKTU",
+            "value": "GMT+8 (Banjarmasin)"
+        },
+        "form": {
+            "title": "MULAI PROYEK",
+            "name": "Nama Lengkap *",
+            "email": "Alamat Email *",
+            "company": "Perusahaan / Organisasi",
+            "message": "Detail Proyek *",
+            "placeholders": {
+                "nameOrCompany": "Nama lengkap Anda atau nama perusahaan *",
+                "email": "email.anda@perusahaan.com *",
+                "message": "Keperluan (opsional)",
+                "date": "Pilih tanggal"
+            },
+            "submit": "Kirim Pesan",
+            "sending": "Mengirim...",
+            "disclaimer": "Dengan mengirim formulir ini, Anda setuju untuk dihubungi terkait pertanyaan proyek Anda. Privasi Anda saya hormati dan informasi Anda tidak akan pernah saya bagikan.",
+            "onSuccess": "Terima kasih! Pesan Anda berhasil dikirim.",
+            "onError": "Ups, terjadi kesalahan.",
+            "tryAgain": "Silakan coba lagi nanti.",
+            "waitTime": "Anda dapat mengirim lagi dalam",
+            "seconds": " Detik"
+        }
+    },
+
     "footer": {
         "brand": {
             "tagline": "Menciptakan pengalaman digital dengan passion dan presisi. Mengubah ide menjadi realitas yang indah dan fungsional."

@@ -20,14 +20,14 @@ const ContactSection = dynamic(() => import('@/components/sections/Contacts'), {
     ),
 });
 
-export default function Page() {
+export default function Page({ params }: { params: { locale: string } }) {
     return (
         <main>
             <Header />
             <Hero />
             <About />
             <FeaturedWorkSection />
-            <ContactSection />
+            <ContactSection locale={params.locale} />
             <Footer />
         </main>
     );

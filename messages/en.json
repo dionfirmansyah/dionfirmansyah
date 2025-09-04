@@ -30,6 +30,7 @@
         "viewProject": "Go to Project",
         "sourceCode": "View Code",
         "liveDemo": "Live Demo",
+        "requestDemo": "Request Demo",
         "tech": "Technologies",
         "cta-1": "Interested in working together?",
         "cta-2": "Let's create something amazing",
@@ -79,6 +80,47 @@
             "seconds": " Seconds"
         }
     },
+
+    "requestDemo": {
+        "title": "Schedule Demo",
+        "subtitle": "Schedule demo for this project",
+        "contactInfo": "CONTACT INFORMATION",
+        "methods": {
+            "email": "EMAIL",
+            "github": "GITHUB",
+            "linkedin": "LINKEDIN"
+        },
+        "responseTime": {
+            "label": "RESPONSE TIME",
+            "value": "Within 24 hours"
+        },
+        "timezone": {
+            "label": "TIMEZONE",
+            "value": "GMT+8 (Banjarmasin)"
+        },
+        "form": {
+            "title": "START A PROJECT",
+            "name": "Full Name *",
+            "email": "Email Address *",
+            "company": "Company / Organization",
+            "message": "Project Details *",
+            "placeholders": {
+                "nameOrCompany": "Your full name or company name *",
+                "email": "your.email@company.com *",
+                "message": "Your message (optional)",
+                "date": "Select date"
+            },
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "disclaimer": "By submitting this form, you agree to be contacted regarding your project inquiry. I respect your privacy and will never share your information.",
+            "onSuccess": "Thank you! Your message has been sent successfully.",
+            "onError": "Oops, something went wrong.",
+            "tryAgain": "Please try again later.",
+            "waitTime": "You can submit again in",
+            "seconds": " Seconds"
+        }
+    },
+
     "footer": {
         "brand": {
             "tagline": "Crafting digital experiences with passion and precision. Turning ideas into beautiful, functional realities."

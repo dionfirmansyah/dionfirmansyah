@@ -1,22 +1,33 @@
 'use client';
-import { useRequestProject } from '@/hooks/useRequestProject';
+import { useCreateRequest } from '@/hooks/useCreateRequest';
 import { id } from '@instantdb/react';
 import { ArrowUpRight, Circle, Github, Linkedin, Mail, Send } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '../ui/button';
 
-export default function Contacts() {
+export default function Contacts({ locale }: { locale: string }) {
     const t = useTranslations('contact');
 
-    const { addRequestProject } = useRequestProject();
+    const formatter = new Intl.DateTimeFormat(locale, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true,
+    });
+
+    const { addRequestProject } = useCreateRequest();
     const [formData, setFormData] = useState({
         id: id(),
         name: '',
         email: '',
         company: '',
         message: '',
+        createdAt: formatter.format(new Date()),
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -54,19 +65,6 @@ export default function Contacts() {
             [name]: value,
         }));
     };
-
-    const locale = useLocale();
-
-    // formatter sesuai bahasa
-    const formatter = new Intl.DateTimeFormat(locale, {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: '2-digit',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true,
-    });
 
     const [lastSubmitTime, setLastSubmitTime] = useState<number | null>(null);
     const [remainingTime, setRemainingTime] = useState<number>(0);

@@ -3,12 +3,13 @@
 import { Button } from '@/components/ui/button';
 import { useProject } from '@/hooks/useProject';
 import { Project } from '@/types';
-import { ChevronDown, ExternalLink, Github } from 'lucide-react';
+import { Calendar, ChevronDown, ExternalLink, Github } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
 import { ProjectImage } from '../ProjectImage';
 import ProjectSkeleton from '../ProjectSkeleton';
+import { RequestDemoModal } from '../RequestDemoModal';
 import SlideToViewAll from '../SlideToNavigate';
 
 export default function Projects() {
@@ -22,6 +23,14 @@ export default function Projects() {
 
     const toggleProject = (projectId: string) => {
         setExpandedProject(expandedProject === projectId ? null : projectId);
+    };
+
+    const [selectedProject, setSelectedProject] = useState<string | undefined>(undefined);
+    const [open, setOpen] = useState(false);
+
+    const handleRequestDemo = (projectName: string | undefined) => {
+        setSelectedProject(projectName);
+        setOpen(true);
     };
 
     return (
@@ -233,7 +242,7 @@ export default function Projects() {
                                                         : 'translate-y-4 transform'
                                                 }`}
                                             >
-                                                {data.liveUrl && (
+                                                {data.liveUrl ? (
                                                     <Button asChild variant="limeOutline">
                                                         <Link
                                                             href={data.liveUrl || '#'}
@@ -245,7 +254,17 @@ export default function Projects() {
                                                             {t('viewProject')}
                                                         </Link>
                                                     </Button>
+                                                ) : (
+                                                    <Button
+                                                        onClick={() => handleRequestDemo(data.title)}
+                                                        variant="limeOutline"
+                                                        className="group flex items-center"
+                                                    >
+                                                        <Calendar className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-105" />
+                                                        {t('requestDemo')}
+                                                    </Button>
                                                 )}
+
                                                 {data.githubUrl && (
                                                     <Button
                                                         variant="outline"
@@ -279,6 +298,12 @@ export default function Projects() {
                         pointerWidth={locale === 'id' ? 175 : 125}
                     />
                 </div>
+                <RequestDemoModal
+                    open={open}
+                    onClose={() => setOpen(false)}
+                    projectName={selectedProject || ''}
+                    locale={locale}
+                />
             </div>
 
             {/* CSS Animations */}

@@ -46,6 +46,14 @@ const schema = i.schema({
             message: i.string().optional(),
             name: i.string(),
         }),
+        request_demo: i.entity({
+            nameOrCompany: i.string(),
+            email: i.string().indexed(),
+            message: i.string().optional(),
+            projectName: i.string().indexed(),
+            date: i.string(),
+            createdAt: i.date().indexed().optional(),
+        }),
         technologies: i.entity({
             name: i.string().indexed(),
         }),
@@ -118,17 +126,26 @@ const schema = i.schema({
 const db = init({ appId: APP_ID, schema });
 
 type RequestProject = InstaQLEntity<typeof schema, 'request_projects'>;
-export function useRequestProject() {
+type RequestDemo = InstaQLEntity<typeof schema, 'request_demo'>;
+export function useCreateRequest() {
     const addRequestProject = (formData: RequestProject) => {
         db.transact(
             db.tx.request_projects[id()].create({
                 ...formData,
-                createdAt: Date.now(),
+            }),
+        );
+    };
+
+    const addRequestDemo = (formData: RequestDemo) => {
+        db.transact(
+            db.tx.request_demo[id()].create({
+                ...formData,
             }),
         );
     };
 
     return {
         addRequestProject,
+        addRequestDemo,
     };
 }
