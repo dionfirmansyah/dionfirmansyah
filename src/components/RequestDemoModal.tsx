@@ -71,6 +71,15 @@ export function RequestDemoModal({ open, onClose, projectName, locale }: Request
                 createdAt: formatter.format(new Date()),
             });
             toast.success(t('form.onSuccess'));
+            setFormData({
+                id: '',
+                nameOrCompany: '',
+                email: '',
+                message: '',
+                projectName: '',
+                date: '',
+                createdAt: '',
+            });
             onClose();
         } catch (error) {
             console.error('Request demo failed:', error);
@@ -90,7 +99,7 @@ export function RequestDemoModal({ open, onClose, projectName, locale }: Request
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-            <div className="relative w-full max-w-lg border-2 border-black bg-white p-6 font-[Helvetica]">
+            <div className="bg-background relative w-full max-w-lg rounded-lg border-2 border-black p-6 font-[Helvetica]">
                 {/* Close button */}
                 <Button
                     variant={'outline'}
