@@ -151,6 +151,8 @@ export function ProjectLists({ translations }: ProjectListsProps) {
     const locale = useLocale();
     const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
+    const [selectedProject, setSelectedProject] = useState<string | undefined>(undefined);
+    const [open, setOpen] = useState(false);
     // Ensure allWorks is always an array
     const safeAllWorks = Array.isArray(allWorks) ? allWorks : [];
 
@@ -178,9 +180,6 @@ export function ProjectLists({ translations }: ProjectListsProps) {
             </div>
         );
     }
-
-    const [selectedProject, setSelectedProject] = useState<string | undefined>(undefined);
-    const [open, setOpen] = useState(false);
 
     const handleRequestDemo = (projectName: string | undefined) => {
         setSelectedProject(projectName);
