@@ -111,9 +111,8 @@ export function RequestDemoModal({ open, onClose, projectName, locale }: Request
                 </Button>
 
                 {/* Header */}
-                <h2 className="mb-1 text-2xl font-bold tracking-tight uppercase">
-                    {t('title')} <span className="underline">{projectName}</span>
-                </h2>
+                <h2 className="mb-1 text-2xl font-bold tracking-tight uppercase">{t('title')}</h2>
+                <h3 className="mb-1 text-2xl font-bold tracking-tight uppercase underline">{projectName}</h3>
                 <p className="mb-6 text-sm font-medium text-neutral-700">{t('subtitle')}</p>
 
                 {/* Form */}

@@ -1,9 +1,10 @@
 'use client';
 import { ProjectImage } from '@/components/ProjectImage';
 import ProjectSkeleton from '@/components/ProjectSkeleton';
+import { RequestDemoModal } from '@/components/RequestDemoModal';
 import { Button } from '@/components/ui/button';
 import { useProject } from '@/hooks/useProject';
-import { ArrowLeft, ChevronDown, Contact, ExternalLink, Github, Rocket } from 'lucide-react';
+import { ArrowLeft, Calendar, ChevronDown, Contact, ExternalLink, Github, Rocket } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -21,6 +22,7 @@ interface Translations {
     'cta-2': string;
     'cta-3': string;
     'cta-4': string;
+    requestDemo: string;
 }
 
 interface ProjectListsProps {
@@ -176,6 +178,14 @@ export function ProjectLists({ translations }: ProjectListsProps) {
             </div>
         );
     }
+
+    const [selectedProject, setSelectedProject] = useState<string | undefined>(undefined);
+    const [open, setOpen] = useState(false);
+
+    const handleRequestDemo = (projectName: string | undefined) => {
+        setSelectedProject(projectName);
+        setOpen(true);
+    };
 
     return (
         <div className="min-h-screen bg-white lg:flex lg:h-screen">
@@ -379,7 +389,7 @@ export function ProjectLists({ translations }: ProjectListsProps) {
 
                                             {/* Action Buttons */}
                                             <div className="flex items-center gap-2">
-                                                {project.liveUrl && (
+                                                {project.liveUrl ? (
                                                     <Button asChild variant="limeOutline">
                                                         <Link
                                                             href={project.liveUrl}
@@ -390,6 +400,15 @@ export function ProjectLists({ translations }: ProjectListsProps) {
                                                             <ExternalLink className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-105" />
                                                             {translations.viewProject}
                                                         </Link>
+                                                    </Button>
+                                                ) : (
+                                                    <Button
+                                                        onClick={() => handleRequestDemo(project.title)}
+                                                        variant="limeOutline"
+                                                        className="group flex items-center"
+                                                    >
+                                                        <Calendar className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-105" />
+                                                        {translations.requestDemo}
                                                     </Button>
                                                 )}
                                                 {project.githubUrl && (
@@ -451,6 +470,12 @@ export function ProjectLists({ translations }: ProjectListsProps) {
                     </div>
                 </div>
             </div>
+            <RequestDemoModal
+                open={open}
+                onClose={() => setOpen(false)}
+                projectName={selectedProject || ''}
+                locale={locale}
+            />
         </div>
     );
 }

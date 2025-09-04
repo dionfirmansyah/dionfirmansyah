@@ -19,6 +19,7 @@ export default async function WorkPage() {
                 'cta-2': t('cta-2'),
                 'cta-3': t('cta-3'),
                 'cta-4': t('cta-4'),
+                requestDemo: t('requestDemo'),
             }}
         />
     );
