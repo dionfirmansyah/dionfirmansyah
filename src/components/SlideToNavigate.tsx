@@ -24,7 +24,7 @@ export default function SlideToNavigate({ targetPath, label, pointerWidth = 120 
     const thumbPosition = useMemo(() => {
         const thumbWidth = pointerWidth;
         return `calc(${value}% - ${(value / 100) * thumbWidth}px)`;
-    }, [value]);
+    }, [value, pointerWidth]);
 
     const handleMouseDown = useCallback(
         (e: React.MouseEvent) => {

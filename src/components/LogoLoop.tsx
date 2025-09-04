@@ -83,11 +83,13 @@ const useImageLoader = (
     onLoad: () => void,
     deps: React.DependencyList,
 ) => {
+    const memoizedOnLoad = useCallback(onLoad, deps);
+
     useEffect(() => {
         const images = seqRef.current?.querySelectorAll('img') ?? [];
 
         if (images.length === 0) {
-            onLoad();
+            memoizedOnLoad();
             return;
         }
 
@@ -95,7 +97,7 @@ const useImageLoader = (
         const handleImageLoad = () => {
             remainingImages -= 1;
             if (remainingImages === 0) {
-                onLoad();
+                memoizedOnLoad();
             }
         };
 
@@ -115,7 +117,7 @@ const useImageLoader = (
                 img.removeEventListener('error', handleImageLoad);
             });
         };
-    }, [onLoad, seqRef, ...deps]);
+    }, [memoizedOnLoad, seqRef]);
 };
 
 // Animation Loop Hook
